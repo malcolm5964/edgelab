@@ -1,0 +1,25 @@
+Added the line ‘([0, 140, 140], [50, 255, 255])’ to the boundaries listto include the color yellow. 
+Added the line ‘yellow_img = normalizeImg(output[3])’, and appended the ‘catImg = cv2.hconcat([frame, red_img, green_img, blue_img, yellow_img])’ line.
+
+boundaries = [
+    ([17, 15, 100], [50, 56, 200]), # For Red
+    ([86, 31, 4], [220, 88, 50]), # For Blue
+    ([25, 90, 4], [62, 200, 50]), # For Green
+    ([0, 120, 120], [80, 255, 255])  # For Yellow
+]
+
+
+        # Normalize each segmented image for display
+        red_img = normalizeImg(output[0])
+        blue_img = normalizeImg(output[1])
+        green_img = normalizeImg(output[2])
+        yellow_img = normalizeImg(output[3])
+
+
+        catImg = cv2.hconcat([frame, red_img, green_img, blue_img, yellow_img])
+        cv2.imshow("Images with Colours", catImg)
+
+Edit pixels_per_cell=(x, y)
+Default Patch Size [8,8]
+Patch Size [4,4] - smoother HoG image
+Patch Size [16,16] - very chopped up HoG image
