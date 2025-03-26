@@ -1,0 +1,13 @@
+LAB1
+Code2 (capvid.py) is a real-time motion detection program whilst Code1 (capimg.py) is a webcam snapshot program.
+cv2.absdiff computes the difference between two consecutive frames to highlight changes.
+cv2.cvtColor converts the difference image to grayscale for easier processing. 
+cv2.gaussianBlur smooths the image to reduce noise.
+cv2.threshold converts the blurred image into a binary image (black and white) to emphasize movement regions.
+cv2.dilate expands white regions in the binary image to connect broken contours, making movement more distinguishable.
+cv2.findContours detects outlines of objects in the thresholded image, while ignoring contours with an area smaller than 900 to eliminate minor noise.
+cv2.boundingRect draws a green rectangle around detected movement regions.
+cv2.putText displays "Status: Movement" on the frame when motion is detected.
+cv2.imshow("feed", frame1) displays the processed video feed with detected motion.
+frame1 = frame2 updates frame1 with frame2 continuously to maintain real-time motion tracking.
+cv2.waitKey(40) runs the loop at approximately 25 FPS (1000/40 ms per frame) and allows the user to break the program with 'q'.
