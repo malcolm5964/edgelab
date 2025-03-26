@@ -22,7 +22,7 @@ cap.release()
 # Print confirmation message
 print("Image captured and saved!")
 
-# ==============================================================================
+# ======================= Perfomance Enhancements =============================
 # 1. Add a timestamp to the filename to avoid overwriting previous captures:
 # import time
 # timestamp = time.strftime("%Y%m%d-%H%M%S")
